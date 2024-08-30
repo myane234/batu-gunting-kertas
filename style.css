@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(3, 252, 177, 0.5);
+}
+
+.container {
+  background-image: linear-gradient(
+    to right,
+    rgba(3, 28, 252, 0.5),
+    rgba(3, 177, 252, 1)
+  );
+  height: 400px;
+  width: 500px;
+  text-align: center;
+  margin: 80px;
+  border-radius: 10%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+.container .content-judul h1 {
+  font-size: 30px;
+  margin: 50px;
+  font-family: "Nerko One", cursive;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 40px auto;
+  border-radius: 5px;
+  border: 2px solid rgba(3, 177, 252, 0.7); /* Warna border sesuai tema */
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sedikit bayangan */
+  transition: all 0.3s ease; /* Animasi transisi */
+}
+input:focus {
+  border-color: rgba(3, 28, 252, 0.8); /* Ubah warna saat fokus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar */
+  outline: none; /* Hilangkan outline default */
+}
+input::placeholder {
+  color: rgba(0, 0, 0, 0.5); /* Warna placeholder */
+  font-style: italic;
+}
+
+button {
+  border: red;
+  font-size: 16px;
+  background-color: rgba(83, 134, 252, 0.2);
+  border-radius: 20%;
+}
+
+button:hover {
+  background-color: rgba(121, 158, 243, 0.2);
+}

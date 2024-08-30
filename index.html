@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batu, Gunting, Kertas</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style.css"
+      <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <section class="content-judul">
+        <h1>Permainan Batu, Gunting, Kertas</h1>
+      </section>
+      <label class="text" for="userChoice"
+        >Masukkan pilihan Anda (batu, gunting, kertas):</label
+      >
+      <input
+        class="text"
+        type="text"
+        id="userChoice"
+        placeholder="batu, gunting, kertas"
+      />
+      <button onclick="playGame()">Hasil!</button>
+
+      <p class="text" id="result"></p>
+    </div>
+    <script>
+      function getComputerChoice() {
+        const choices = ["batu", "gunting", "kertas"];
+        const randomIndex = Math.floor(Math.random() * 3);
+        return choices[randomIndex];
+      }
+
+      function playGame() {
+        const userChoice = document
+          .getElementById("userChoice")
+          .value.toLowerCase();
+        const computerChoice = getComputerChoice();
+
+        document.getElementById("result").innerHTML =
+          "Pilihan komputer: " + computerChoice;
+        if (userChoice === computerChoice) {
+          document.getElementById("result").innerHTML += "<br>Hasil: Seri!";
+        } else if (
+          (userChoice === "batu" && computerChoice === "gunting") ||
+          (userChoice === "gunting" && computerChoice === "kertas") ||
+          (userChoice === "kertas" && computerChoice === "batu")
+        ) {
+          document.getElementById("result").innerHTML += "<br>Anda menang!";
+        } else {
+          document.getElementById("result").innerHTML += "<br>Komputer menang!";
+        }
+      }
+      document
+        .getElementById("userChoice")
+        .addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            playGame();
+          }
+        });
+    </script>
+  </body>
+</html>
